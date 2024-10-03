@@ -1,5 +1,10 @@
 ---
-- name: Kontrolli masinate olekut
+- name: Ping Google DNS
+  hosts: localhost
+  gather_facts: no
   tasks:
-    - name: Kontrolli, kas masin on püsti
-      ping: 8.8.8.8
+    - name: Ping 8.8.8.8
+      ansible.builtin.ping:
+      delegate_to: "{{ item }}"
+      with_items:
+        - 8.8.8.8
