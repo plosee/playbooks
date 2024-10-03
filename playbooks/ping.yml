@@ -1,6 +1,5 @@
 ---
 - name: Kontrolli masinate olekut
-  hosts: LinuxiServerid
   tasks:
     - name: Kontrolli, kas masin on püsti
-      ping:
+      ping: 8.8.8.8
